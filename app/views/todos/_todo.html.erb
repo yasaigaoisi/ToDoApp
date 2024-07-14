@@ -1,0 +1,20 @@
+<div id="<%= dom_id todo %>" class="flow-root rounded-lg border border-gray-100 py-3 shadow-sm">
+  <dl class="-my-3 divide-y divide-gray-100 text-sm">
+    <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+      <dt class="font-medium text-gray-900">タイトル</dt>
+      <dd class="text-gray-700 sm:col-span-2"><%= todo.title %></dd>
+    </div>
+
+    <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+      <dt class="font-medium text-gray-900">内容</dt>
+      <dd class="text-gray-700 sm:col-span-2"><%= todo.content %></dd>
+    </div>
+
+    <div class="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
+      <dt class="font-medium text-gray-900">ステータス</dt>
+      <dd class="text-gray-700 sm:col-span-2">
+        <%= todo.completed ? "完了" : "未完了" %>
+      </dd>
+    </div>
+  </dl>
+</div>
