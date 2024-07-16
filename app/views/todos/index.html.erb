@@ -2,8 +2,8 @@
 
 <h1 class="text-3xl font-bold underline">Todos</h1>
 
-<div class="overflow-x-auto">
-  <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+<div class="w-1/2 overflow-x-auto">
+  <table class="divide-y-4 divide-gray-200 bg-white text-sm">
     <thead class="ltr:text-left rtl:text-right">
       <tr>
         <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">タイトル</th>
@@ -13,9 +13,9 @@
 
     <tbody class="divide-y divide-gray-200">
       <% @todos.each do |todo| %>
-        <tr class="group hover:bg-gray-100 cursor-pointer" onclick="window.location='<%= todo_path(todo) %>';">
+        <tr class="hover:bg-gray-100 cursor-pointer" onclick="window.location='<%= todo_path(todo) %>';">
           <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 group-hover:text-gray-700"><%= todo.title %></td>
-          <td class="flex justify-center whitespace-nowrap px-4 py-2 text-gray-700"><%= todo.completed ? '完了' : '未完了' %></td>
+          <td class="flex justify-center px-4 py-2 text-gray-700"><%= todo.completed ? '完了' : '未完了' %></td>
         </tr>
       <% end %>
     </tbody>
@@ -27,3 +27,9 @@
     <%= link_to "新規", new_todo_path %>
   </button>
 </span>
+
+<ul>
+  <% @groups.each do |group| %>
+    <li><%= group['name'] %></li>
+  <% end %>
+</ul>

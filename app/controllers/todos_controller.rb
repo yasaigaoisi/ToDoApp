@@ -1,8 +1,12 @@
 class TodosController < ApplicationController
+  include HTTParty
+  base_uri 'http://127.0.0.1:3000'
   before_action :set_todo, only: %i[ show edit update destroy ]
 
   # GET /todos or /todos.json
   def index
+    response = self.class.get('/groups')
+    @groups = JSON.parse(response.body)
     @todos = Todo.all
   end
 
